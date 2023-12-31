@@ -1,19 +1,48 @@
-* {
-  background: #191919;
-  color: #fff;
-  margin: 0;
-  padding: 0;
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url("../fonts/DMSans-Regular.woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --body-bg: #191919;
+  --main-text-color: #fff;
+  --current: #118ad8;
+  --card-bg: #000;
+  --text-color: rgba(255, 255, 255, 0.7);
 }
 
 body {
-  font-family: "DM Sans";
-  font-size: 16px;
-  line-height: 1.6;
-  min-width: 320px;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  line-height: 1.4;
+  /* overflow: hidden; */
+  font-family: 'DM Sans', sans-serif;
+  color: var(--main-text-color);
+  background-color: var(--body-bg);
+}
+
+.container {
+  max-width: 1330px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .container {
@@ -89,6 +118,24 @@ body {
   letter-spacing: 3.2px;
   text-align: left;
 }
+.banner__next{
+  /* box-sizing: inherit; */ 
+  
+}
+
+.banner__next::after {
+  
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 11px;
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/next.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 .banner__socials {
   margin: 100px 20px;
@@ -105,6 +152,14 @@ body {
   width: 650px;
   height: 873px;
   border-radius: 12px;
+}
+
+.hero__decorate {
+  position: absolute;
+  left: -26px;
+  top: -26px;
+  width: 70px;
+  height: 75px;
 }
 
 /* BANNER_END */
@@ -142,11 +197,15 @@ body {
   flex-direction: row;
   background-color: #000000;
   border-radius: 32px;
+  width: 1300px;
+  height: 545px;
 }
 
 .articles__image img {
-  width: 400px;
+  width: 390px;
   height: 465px;
+  padding: 40px;
+  /* max-width: 100%; */
 }
 .articles__row {
   display: flex;
@@ -162,6 +221,7 @@ body {
   position: relative;
   left: 25px;
   background: #191919;
+  width: 100px;
 }
 
 .articles__item-episode {
@@ -192,11 +252,15 @@ body {
   opacity: 70%;
   background-color: #000000;
 }
+.articles__button {
+  width: 200px;
+}
 .articles__button button {
   background-color: #118da8;
   cursor: pointer;
   width: 200px;
   height: 50px;
+  border-radius: 6px;
   /* background-color: #000000; */
 }
 
@@ -356,6 +420,7 @@ body {
   width: 423px;
   height: 321px;
   border-radius: 32px;
+  
 }
 .reviews__rating {
   margin: 50px 0;
@@ -368,7 +433,7 @@ body {
   font-size: 36px;
 }
 .reviews__name {
-  opacity: 70%;
+  opacity: 70%;  
 }
 /* REVIEWS END */
 
